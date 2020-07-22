@@ -1,0 +1,63 @@
+<!--
+* Author: Stacy Sealky Lee
+* Class: CSC 337
+* Type: Programming Assignment 8
+* FileName: index.html
+* Purpose: In this assignment, you are tasked with writing a chatting application 
+called “Chatty.” You’ve hadd to combine a number of technologies that have been talked about in class, 
+including mongoDB, mongoose, express, AJAX, etc.
+* Description: This is the main static file of the project.
+-->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Chatty</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Quicksand:wght@300;500&family=Raleway:wght@300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="header">
+      <h1 class="poFont titleTxt">Chatty</h1>
+      <p class="raFont smTxt">Your private real-time chat room</p>
+    </div>
+
+    <div class="content" id="content">
+    </div>
+
+    <div class="footer">
+
+      <form class="wrapper">
+        <div class="wrapInput quFont">
+          <label for="alias">Your alias: </label>
+          <input class="input-default" type="text" name="alias" id="alias">
+        </div>
+
+        <div class="wrapText">
+          <textarea class="input-textarea quFont" name="message" id="message" rows="2" cols="35"
+            placeholder="Your message: "></textarea>
+        </div>
+        <!-- submit button section -->
+        <div class="container-form-btn quFont">
+          <button id="submit" class="form-btn quFont" type="submit" onclick="update();">
+            Send Message
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <script src="./client.js"></script>
+</body>
+
+</html>

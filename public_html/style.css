@@ -1,0 +1,172 @@
+/*
+ * Author: Stacy Sealky Lee
+ * Class: CSC 337
+ * Type: Programming Assignment 8
+ * FileName: style.css
+ * Purpose: The application should work by presenting the user with a basic 
+ * chat interface when the user visits the home page of the site (index.html).
+ * From this page, the user should be able to specify a alias (username) and 
+ * then begin to send messages using the other text field and the “Send Messages” button.
+ */
+
+body {
+  margin: auto 0;
+}
+
+/* ---------- utilities ------- */
+.quFont {
+  font-family: 'Quicksand', Arial, sans-serif;
+}
+
+.raFont {
+  font-family: 'Raleway', sans-serif;
+}
+
+.poFont {
+  font-family: 'Poiret One', cursive;
+}
+
+.titleTxt {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 3.3em;
+  margin-bottom: -0.3em;
+  margin-top: 0em;
+}
+
+.smTxt {
+  font-size: 0.9em;
+  text-align: center;
+  color: rgba(108,94,94,0.8);
+}
+
+.lg {
+  font-size: 3em;
+  font-weight: 700;
+}
+
+.sm {
+  font-size: 1em;
+  text-align: center;
+}
+
+.mg-btm {
+  margin-bottom: 4em;
+}
+
+/* ---------- grid formatting ------- */
+.container {
+  height: 100vh;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 5.5fr 0.5fr;
+  grid-template-areas:
+    "header header header header"
+    "content content content content"
+    "footer footer footer footer";
+}
+
+
+.header {
+  grid-area: header;
+  /* background-color: #fff; */
+  align-items: center;
+  justify-content: center;
+  background-color: #ea93a6;
+}
+
+.content {
+  grid-area: content;
+  background-color: #ea93a6;
+  color: #fff;
+  font-family: 'Quicksand', Arial, sans-serif;
+  padding: 0em 3em 2em 4em;
+  
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #949590;
+  text-align: center;
+}
+
+.wrapper {
+  justify-content: center;
+  align-items: center;
+  padding: 1.6em 0em 1em 0em;
+}
+
+/* ---------------form */
+
+.wrapInput {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+  /* height: 45px;
+  width: 300px; */
+  display: inline;
+}
+
+.wrapInput label {
+  /* text-align: left; */
+  color: #fff;
+  margin-right: 1em;
+}
+
+.wrapText {
+  justify-content: center;
+  margin: 1.5em 0em;
+}
+
+/* ---------------form inputs*/
+input,
+textarea {
+  outline: none;
+  border: none;
+  text-align: left;
+}
+
+textarea {
+  padding: 10px;
+  /* resize: none; */
+}
+
+
+textarea::placeholder {
+  color: #6c5e5e;
+}
+
+.input-default {
+  background: transparent;
+  font-size: 1.2em;
+  color: #fff;
+  line-height: 1.2;
+  /* padding: 0 5px; */
+}
+
+.input-textarea {
+  font-size: 1em;
+  border-radius: 10px;
+  color: #6c5e5e;
+}
+
+/* ---------------form submit button */
+
+.form-btn {
+  color: #fff;
+  font-size: 1em;
+  line-height: 1.2;
+  padding: 0 15px;
+  border: none;
+  margin-top: -0.6em;
+  height: 40px;
+  border-radius: 8px;
+  background: linear-gradient(160deg, #ea93a6, #ffced7);
+  transition: all 0.3s;
+}
+
+.form-btn:hover {
+  color: #ea93a6;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+}
