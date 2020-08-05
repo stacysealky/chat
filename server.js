@@ -39,12 +39,12 @@ app.use(parser.urlencoded({
 }));
 
 //DEV ENV
-const hostname = '127.0.0.1';
-const port = 3000;
+// const hostname = '127.0.0.1';
+// const port = 3000;
 
 // PRODUCTION ENV 
-// const hostname = '159.65.223.7';
-// const port = 443;
+const hostname = '159.65.223.7';
+const port = 443;
 
 //DB URI - Move to config.env if pushing code
 var uri = 'mongodb+srv://stacysealky:pwd123@clusterstacy.fco5r.mongodb.net/chatty';
