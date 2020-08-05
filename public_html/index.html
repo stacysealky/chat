@@ -15,12 +15,13 @@ including mongoDB, mongoose, express, AJAX, etc.
   <meta charset="utf-8">
   <title>Chatty</title>
   <link
-    href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Quicksand:wght@300;500&family=Raleway:wght@300&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Quicksand:wght@300;500;700&family=Raleway:wght@300&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <script src="http://localhost:3000/socket.io/socket.io.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+  <script src="./client.js"></script>
+  <script src="./ejs.min.js"></script>
 </head>
 
 <body>
@@ -31,12 +32,12 @@ including mongoDB, mongoose, express, AJAX, etc.
       <p class="raFont smTxt">Your private real-time chat room</p>
     </div>
 
-    <div class="content" id="content">
+    <div class="content" id="dataContent">
     </div>
 
     <div class="footer">
 
-      <form class="wrapper">
+      <form class="wrapper" id="msgForm">
         <div class="wrapInput quFont">
           <label for="alias">Your alias: </label>
           <input class="input-default" type="text" name="alias" id="alias">
@@ -48,16 +49,12 @@ including mongoDB, mongoose, express, AJAX, etc.
         </div>
         <!-- submit button section -->
         <div class="container-form-btn quFont">
-          <button id="submit" class="form-btn quFont" type="submit" onclick="update();">
-            Send Message
-          </button>
-        </div>
+          <input id="submit" class="form-btn quFont" type="submit" value="Send Message">
+        </div>        
       </form>
-
+      <button class="form-btn quFont" onclick="refresh();">Show my sent message</button>
     </div>
   </div>
-
-  <script src="./client.js"></script>
 </body>
 
 </html>

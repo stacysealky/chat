@@ -79,10 +79,16 @@ body {
 .content {
   grid-area: content;
   background-color: #ea93a6;
-  color: #fff;
+  color: #f2f2f2;
   font-family: 'Quicksand', Arial, sans-serif;
   padding: 0em 3em 2em 4em;
+  font-weight: 300;
   
+}
+
+#dataContent span {
+  font-weight: 700;
+  color: #fff;
 }
 
 .footer {
