@@ -1,2 +1,3 @@
 http://159.65.223.7:443
 using the same droplet but with port 443
+Make sure to use 443 port for this project

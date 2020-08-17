@@ -1,7 +1,5 @@
 /*
  * Author: Stacy Sealky Lee
- * Class: CSC 337
- * Type: Programming Assignment 8
  * FileName: server.js
  * Purpose: The application should work by presenting the user with a basic 
  * chat interface when the user visits the home page of the site (index.html).
@@ -14,7 +12,7 @@
  *   
  */
 
-//global variables, mostly importing dependencies
+//global variables, importing dependencies
 const express = require('express');
 const mongoose = require('mongoose');
 const parser = require('body-parser');
@@ -23,7 +21,6 @@ const path = require('path');
 const http = require('http');
 var server = http.createServer(app);
 const ejs = require('ejs');
-
 const io = require('socket.io').listen(server);
 
 app.use(express.static(path.join(__dirname, 'public_html')));
@@ -39,22 +36,21 @@ app.use(parser.urlencoded({
 }));
 
 //DEV ENV
-// const hostname = '127.0.0.1';
-// const port = 3000;
+const hostname = '127.0.0.1';
+const port = 3000;
 
 // PRODUCTION ENV 
-const hostname = '159.65.223.7';
-const port = 443;
+// const hostname = '159.65.223.7';
+// const port = 443;
 
-//DB URI - Move to config.env if pushing code
-var uri = 'mongodb+srv://stacysealky:pwd123@clusterstacy.fco5r.mongodb.net/chatty';
+//DB URI is hidden for github repo
 
 //DB SET UP & APP LISTEN
 var options = {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
 };
-mongoose.connect(uri, options, (err, database) => {
+mongoose.connect(Process.MONGO_URI, options, (err, database) => {
 	if (err) {
 		console.log('Unable to connect to DB. Error:', err);
 	} else {
@@ -103,9 +99,6 @@ app.post('/chats/post/', async (req, res) => {
 			message: err
 		}));
   }
-  // var message = new Messages(req.body);
-  // message.save();
-  // res.sendStatus(200);
 });
 
 //routing for get
@@ -124,10 +117,6 @@ app.get('/chats', async (req, res) => {
 			success: false
 		}));
 	}
-  // Messages.find({}, (err, messages) => {
-  //   // console.log(messages)
-  //   res.send(messages);
-  // })
 });
 
 //UNHANDLED REJECTION - Promise
